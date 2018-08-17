@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t ".admin" %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "admin", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "admin", "data-turbolinks-track": true  %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/admin">
+            <span><%= t ".admin" %><%= t(".page") %></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row content-work">
+        <div class="sidebar col-md-2">
+          <ul id="nav">
+            <li>
+              <a class="selected" href="/admin">
+                <i class="fa fa-dashboard"></i><%= t ".dashboard" %>
+              </a>
+            </li>
+            <li>
+              <%= link_to admin_costs_path do %>
+                <i class="fas fa-dollar-sign"></i>
+                <%= t ".list_costs" %>
+                <% end %>
+            </li>
+            <li>
+              <%= link_to admin_floors_path do %>
+                <i class="fas fa-warehouse"></i>
+                <%= t ".list_floors" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_floor_costs_path do %>
+                <i class="fas fa-hand-holding-usd"></i>
+                <%= t ".list_floor_costs" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to admin_users_path do %>
+                <i class="fas fa-users"></i>
+                <%= t ".list_users" %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+        <div class="content col-md-10 col-md-offset-2">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

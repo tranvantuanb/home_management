@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  month: 2018-08-08
+  total_payment_electric: 1.5
+  total_payment_water: 1.5
+
+two:
+  month: 2018-08-08
+  total_payment_electric: 1.5
+  total_payment_water: 1.5

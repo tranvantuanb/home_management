@@ -36,6 +36,14 @@ gem "mysql2"
 gem "devise"
 gem "bootstrap-sass"
 gem "cancancan"
+gem 'font-awesome-sass'
+gem "config"
+gem "friendly_id"
+gem "kaminari"
+gem "bootstrap-kaminari-views"
+gem 'momentjs-rails'
+gem 'bootstrap3-datetimepicker-rails'
+gem "i18n-js"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

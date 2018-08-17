@@ -1,0 +1,85 @@
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "variables";
+
+footer.footer{
+  margin-top: 25px;
+  border-top: solid 1px $gray_footer;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+  font-size: 12px;
+}
+
+.col-md-4.col-md-offset-4.form-edit-user,
+  .col-md-4.col-md-offset-4.form-login-user {
+  background: $white-grey;
+  border-radius: 7px;
+  padding: 20px;
+}
+
+.btn.btn-default {
+  border: solid 2px $dark-blue;
+  font-size: 12px;
+  font-weight: 900;
+  width: 100%;
+  margin-top: 15px;
+}
+
+h2.tittle {
+  text-align: center;
+  font-size: 3em;
+  color: $violet_title;
+}
+
+h2.text-center {
+  color: $dark-blue;
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: 4px 1px 1px lightblue;
+  margin-bottom: 30px;
+}
+
+.btn.btn-default:hover {
+  background: $dark-blue;
+  color: white;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#user_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.navbar-default {
+    background-color: #090909;
+    border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-brand {
+    color: #d9edf7;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #d9edf7;
+}
+
+.home-page {
+  width: 100%;
+  height: 100%;
+  background-color: #b5b5b5;
+  background-image: url(../images/house.jpg);
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+}

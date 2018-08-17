@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for [:admin, @user], html: {multipart: true} do |f| %>
+      <%=  render "shared/error_messages", object: @user %>
+
+      <div class="form-group">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true,
+          class: "form-control", required: "true" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autocomplete: false, class: "form-control",
+          required: "true" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+          <div class="row"></div>
+        </%>
+        <%= f.password_field :password, autocomplete: "off",
+          class: "form-control"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off",
+          class: "form-control"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :role, t(".role") %><br />
+        <%= f.collection_radio_buttons :role, User.role_name, :to_sym, :to_s %>
+      </div>
+
+      <div class="form-group">
+        <%= f.collection_select :floor_id, Floor.all, :id, :name,
+          {:prompt => "Chọn ở tầng nào?", selected: @user.floor_id}, {class: "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :address %><br />
+        <%= f.text_field :address, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :phone_number %><br />
+        <%= f.text_field :phone_number, class: "form-control", required: "true" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t(".save"), class: "btn btn-default" %>
+      </div>
+    <% end %>
+    <%= link_to "Quay lại", root_path %>
+  </div>
+</div>

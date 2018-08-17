@@ -1,0 +1,9 @@
+<% @user_costs.each do |u_cost| %>
+  <tr class="row">
+    <td class="col-md-3"><%= u_cost.month ? u_cost.month.strftime("%m/%Y") : u_cost.month %></td>
+    <td class="col-md-3"><%= u_cost.user.name %></td>
+    <td class="col-md-3"><%= u_cost.electric_cost ? number_to_currency(u_cost.electric_cost.round, unit: "VND", delimiter: ".", separator: ",", precision: 0, format: "%n %u") : u_cost.electric_cost.round %></td>
+    <td class="col-md-3"><%= u_cost.water_cost ? number_to_currency(u_cost.water_cost.round, unit: "VND", delimiter: ".", separator: ",", precision: 0, format: "%n %u") : u_cost.water_cost.round %></td>
+  </tr>
+<% end %>
+<%= paginate @user_costs %>

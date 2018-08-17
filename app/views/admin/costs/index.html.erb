@@ -1,0 +1,37 @@
+<h2 class="text-center"><%= t ".cost" %></h2>
+<div class="pull-left btn-add-cost">
+  <%= link_to "  Tạo mới", new_admin_cost_path,
+    class: "fa fa-plus btn btn-default" %>
+</div>
+<div id="table-costs">
+  <table class="table table-hover new-order table-bordered">
+    <thead>
+      <tr class="info row">
+        <th class="col-md-2"><%= t ".month" %></th>
+        <th class="col-md-2"><%= t ".amount_electric" %></th>
+        <th class="col-md-2"><%= t ".total_payment_electric" %></th>
+        <th class="col-md-2"><%= t ".amount_water" %></th>
+        <th class="col-md-2"><%= t ".total_payment_water" %></th>
+        <th class="col-md-2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @costs.each do |cost| %>
+        <tr class="row">
+          <td class="col-md-2"><%= cost.month ? cost.month.strftime("%m/%Y") : cost.month %></td>
+          <td class="col-md-2"><%= cost.amount_electric %></td>
+          <td class="col-md-2"><%= cost.total_payment_electric ? number_to_currency(cost.total_payment_electric, unit: "VND", delimiter: ".", separator: ",", format: "%n %u") : cost.total_payment_electric %></td>
+          <td class="col-md-2"><%= cost.amount_water %></td>
+          <td class="col-md-2"><%= cost.total_payment_water ? number_to_currency(cost.total_payment_water, unit: "VND", delimiter: ".", separator: ",", format: "%n %u") : cost.total_payment_water %></td>
+          <td class="col-md-2">
+            <%= link_to edit_admin_cost_path(cost),
+              class: "btn btn-default button-1" do %>
+              <i class="fa fa-wrench"> Chỉnh sửa </i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      <%= paginate @costs %>
+    </tbody>
+  </table>
+</div>

@@ -20,4 +20,178 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  devise:
+    admin: "Admin"
+    sessions:
+      new:
+        log_in: "Đăng nhập"
+    registrations:
+      new:
+        sign_up: "Đăng ký"
+      edit:
+        update: "Update"
+        cancel_my_account: "Xóa tài khoản"
+        unhappy: "Unhappy"
+        back: "Quay lại"
+        we_need: "(chúng tôi cần pasword hiện tại để xác nhận thay đổi)"
+        leave_blank: "(để trống nếu bạn không muốn thay đổi gì)"
+        waiting: "Hiện đang đợi để xác nhận: "
+        edit: "Sửa thông tin cá nhân"
+        are_you_sure: "Bạn chắc chắn chưa ? "
+    shared:
+      links:
+        log_in: "Đăng nhập"
+        sign_up: "Đăng ký"
+        forgot_your_password: "Quên mật khẩu?"
+        did_not_receiver_confirm: "Không nhận được thông tin hướng dẫn?"
+  good_house: "Happy House"
+  layouts:
+    header:
+      home_management: "Home Management"
+      caculate_cost: "Tính toán chi phí"
+      help: "Help"
+      about: "About"
+      account: "Tài khoản"
+      login: "Đăng nhập"
+      signup: "Đăng ký"
+    footer:
+      author: "Trần Tuấn"
+      the: "The"
+      by: "by"
+      home_management: "Home management"
+    admin:
+      admin: "Admin"
+      list_costs: "Quản lý chi phí"
+      list_floors: "Quản lý tầng"
+      list_floor_costs: "Quản lý chi phí theo tầng"
+      list_users: "Quản lý thành viên"
+  static_pages:
+    contact:
+      mail_us: "Mail us"
+      address: "Địa chỉ"
+      phone: "Số điện thoại"
+      email: "Email"
+      e_mail: "E-mail : "
+      detail_email: "ngoctuan.425@gmail.com"
+      detail_phone: "+84 9733 22 413"
+      detail_address: "25T2 - Hoang Dao Thuy Stress, Ha Noi City"
+    home:
+      home: "Trang chủ"
+    help:
+      help: "Help"
+    about:
+      about: "About"
+  admin:
+    costs:
+      new:
+        create_cost: "Tạo thông tin chi phí mới"
+      create:
+        create_success: "Tạo mới thành công!"
+        fail: "Tạo mới fail"
+      index:
+        cost: "Chi phí cả nhà"
+        month: "Thời gian"
+        total_payment_electric: "Tổng tiền điện"
+        total_payment_water: "Tổng tiền nước"
+        amount_electric: "Tổng số điện tiêu thụ"
+        amount_water: "Tổng số nước tiêu thụ"
+      edit:
+        edit_cost: "Chỉnh sửa thông tin chi phí"
+      form:
+        save: "Lưu"
+        month: "Thời gian"
+        total_payment_electric: "Tổng tiền điện"
+        total_payment_water: "Tổng tiền nước"
+        amount_electric: "Tổng số điện tiêu thụ"
+        amount_water: "Tổng số nước tiêu thụ"
+        2f: "Số công tơ tầng 2"
+        3f: "Số công tơ tầng 3"
+      update:
+        update_success: "Update thành công!"
+    statistic:
+      index:
+        electric: "Tiền điện"
+        water: "Tiền nước"
+    floors:
+      form:
+        save: "Lưu"
+        name_floor: "Tầng mấy?"
+      create:
+        create_success: "Lưu thành công!"
+      index:
+        edit_floor: " Chỉnh sửa"
+        floors: "Quản lý tầng"
+        order: "STT"
+        name_floor: "Tên tầng"
+      update:
+        update_success: "Cập nhật thành công!"
+      edit:
+        edit_floor: "Chỉnh sửa thông tin tầng"
+    floor_costs:
+      new:
+        create_floor_cost: "Nhập số liệu theo tầng"
+      index:
+        floor_costs: "Chi phí theo tầng"
+        order: "STT"
+        name_floor: "Tầng"
+        amount_electric_consumption: "Số điện công tơ"
+        real_consumption: "Trong tháng"
+        electric_cost: "Tiền điện"
+        water_cost: "Tiền nước"
+        edit_floor_cost: " Chỉnh sửa"
+        month: "Tháng"
+        updated_time: "Cập nhật lúc"
+      form:
+        save: "Lưu"
+        amount_electric_consumption: "Số điện tháng này"
+        month: "Thời gian"
+      create:
+        create_success: "Lưu thành công"
+        fail: "Đã có lỗi"
+      update:
+        update_success: "Lưu thành công"
+      edit:
+        edit_floor: "Chỉnh sửa chi phí theo tầng"
+    users:
+      index:
+        users: "Danh sách thành viên"
+        index: "STT"
+        name: "Tên"
+        email: "Mail tài khoản"
+        phone_number: "Số điện thoại"
+        floor: "Đang ở tầng"
+        edit_user: " Chỉnh sửa"
+        e_cost: "Tiền điện"
+        w_cost: "Tiền nước"
+        month: "Tháng"
+      edit:
+        edit_user: "Chỉnh sửa account thành viên"
+      form:
+        save: "Lưu"
+      update:
+        update_success: "Lưu thành công"
+      create:
+        create_success: "Tạo thành công"
+  sessions:
+    create:
+        invalid_email_password: "Email hoặc mật khẩu không đúng."
+  shared:
+    error_messages:
+      the_form_contains: "Đã có "
+  users:
+    show:
+      profile: "Thông tin cá nhân"
+      name: "Tên"
+      email: "Email account"
+      address: "Địa chỉ"
+      phone_number: "Số điện thoại"
+      month: "Tháng"
+      e_cost: "Tiền điện"
+      w_cost: "Tiền nước"
+      index: "STT"
+  cost_statistics: "Thống kê chi phí điện nước "
+  vertical: "vertical"
+  right: "right"
+  middle: "middle"
+  amount: "Số tiền"
+  month: "Tháng "

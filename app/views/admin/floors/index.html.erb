@@ -1,0 +1,31 @@
+<h2 class="text-center"><%= t ".floors" %></h2>
+<div class="pull-left btn-add-cost">
+  <%= link_to "  Tạo mới", new_admin_floor_path,
+    class: "fa fa-plus btn btn-default" %>
+</div>
+<div id="table-floors">
+  <table class="table table-hover new-order table-bordered">
+    <thead>
+      <tr class="info row">
+        <th class="col-md-2"><%= t ".order" %></th>
+        <th class="col-md-8"><%= t ".name_floor" %></th>
+        <th class="col-md-2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @floors.each_with_index do |floor, index| %>
+        <tr class="row">
+          <td class="col-md-2"><%= index + 1 %></td>
+          <td class="col-md-8"><%= floor.name %></td>
+          <td class="col-md-2">
+            <%= link_to edit_admin_floor_path(floor),
+              class: "btn btn-default button-1" do %>
+              <i class="fa fa-wrench"><%= t ".edit_floor" %></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      <%= paginate @floors %>
+    </tbody>
+  </table>
+</div>

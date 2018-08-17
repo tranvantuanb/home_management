@@ -1,0 +1,43 @@
+<h2 class="text-center"><%= t ".profile" %></h2>
+<div id="table-exams">
+  <table class="table table-hover new-order table-bordered">
+    <thead>
+      <tr class="info row">
+        <th class="col-md-3"><%= t ".name" %></th>
+        <th class="col-md-3"><%= t ".email" %></th>
+        <th class="col-md-3"><%= t ".address" %></th>
+        <th class="col-md-3"><%= t ".phone_number" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="row">
+        <td class="col-md-3"><%= @user.name %></td>
+        <td class="col-md-3"><%= @user.email %></td>
+        <td class="col-md-3"><%= @user.address %></td>
+        <td class="col-md-3"><%= @user.phone_number %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-hover new-order table-bordered">
+    <thead>
+      <tr class="info row">
+        <th class="col-md-3"><%= t ".index" %></th>
+        <th class="col-md-3"><%= t ".month" %></th>
+        <th class="col-md-3"><%= t ".e_cost" %></th>
+        <th class="col-md-3"><%= t ".w_cost" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_costs.each_with_index do |u_cost, index| %>
+        <tr class="row">
+          <td class="col-md-3"><%= index + 1 %></td>
+          <td class="col-md-3"><%= u_cost.month ? u_cost.month.strftime("%m/%Y") : u_cost.month %></td>
+          <td class="col-md-3"><%= u_cost.electric_cost ? number_to_currency(u_cost.electric_cost.round, unit: "VND", delimiter: ".", separator: ",", precision: 0, format: "%n %u") : u_cost.electric_cost.round %></td>
+          <td class="col-md-3"><%= u_cost.water_cost ? number_to_currency(u_cost.water_cost.round, unit: "VND", delimiter: ".", separator: ",", precision: 0, format: "%n %u") : u_cost.water_cost.round %></td>
+        </tr>
+      <% end %>
+      <%= paginate @user_costs %>
+    </tbody>
+  </table>
+</div>

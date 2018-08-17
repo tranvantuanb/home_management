@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= form_for [:admin, @floor], html: {multipart: true}  do |f| %>
+      <%=  render "shared/error_messages", object: @floor %>
+
+      <div class="form-group">
+        <%= f.label :name, t(".name_floor") %><br />
+        <%= f.text_field :name, placeholder: "Tầng 1, Tầng 2, .. Sử dụng chung",
+          class: "form-control", required: "true" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t(".save"), class: "btn btn-default" %>
+      </div>
+    <% end %>
+    <br />
+    <%= link_to "Quay lại", root_path %>
+  </div>
+</div>

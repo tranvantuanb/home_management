@@ -1,0 +1,58 @@
+<h2 class="text-center"><%= t ".users" %></h2>
+<div class="pull-left btn-add-cost">
+  <%= link_to "  Tạo mới", new_admin_user_path,
+    class: "fa fa-plus btn btn-default" %>
+</div>
+<div id="table-users">
+  <table class="table table-hover new-order table-bordered">
+    <thead>
+      <tr class="info row">
+        <th class="col-md-1"><%= t ".index" %></th>
+        <th class="col-md-2"><%= t ".name" %></th>
+        <th class="col-md-3"><%= t ".email" %></th>
+        <th class="col-md-2"><%= t ".phone_number" %></th>
+        <th class="col-md-2"><%= t ".floor" %></th>
+        <th class="col-md-2"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each_with_index do |user, index| %>
+        <tr class="row">
+          <td class="col-md-1"><%= index + 1 %></td>
+          <td class="col-md-2"><%= user.name %></td>
+          <td class="col-md-3"><%= user.email %></td>
+          <td class="col-md-2"><%= user.phone_number %></td>
+          <td class="col-md-2"><%= user.floor&.name %></td>
+          <td class="col-md-2">
+            <%= link_to edit_admin_user_path(user),
+              class: "btn btn-default button-1" do %>
+              <i class="fa fa-wrench"><%= t ".edit_user" %></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      <%= paginate @users %>
+    </tbody>
+  </table>
+</div>
+
+<div class="pull-left drop-down-filter">
+  <% months = UserCost.select(:month).map{|m| m.month.month.to_s + "/" + m.month.year.to_s}.uniq %>
+  <%= select_tag("month", options_for_select(months) , {:prompt => "Lọc theo tháng" , class: "form-control"}) %>
+  </div>
+  <table class="table table-hover new-order table-bordered">
+    <thead>
+      <tr class="info row">
+        <th class="col-md-3"><%= t ".month" %></th>
+        <th class="col-md-3"><%= t ".name" %></th>
+        <th class="col-md-3"><%= t ".e_cost" %></th>
+        <th class="col-md-3"><%= t ".w_cost" %></th>
+      </tr>
+    </thead>
+    <tbody id="user-costs">
+      <%= render "user_cost", object: @user_costs %>
+    </tbody>
+  </table>
+</div>
+
+

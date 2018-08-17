@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  electric_cost: 1.5
+  water_cost: 1.5
+  cost_id: 1
+
+two:
+  name: MyString
+  electric_cost: 1.5
+  water_cost: 1.5
+  cost_id: 1
