@@ -21,7 +21,7 @@
 .byebug_history
 
 /config/database.yml
-/config/secrets.yml
+# /config/secrets.yml
 /public/assets/*
 /public/javascripts/i18n.js
 /public/javascripts/translations.js
