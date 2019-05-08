@@ -1,6 +1,6 @@
-<h2 class="text-center"><%= t ".floor_costs" %></h2>
+<h2 class="text-center"><%= t ".room_costs" %></h2>
 <div class="pull-left btn-add-cost">
-  <%= link_to "  Tạo mới", new_admin_floor_cost_path,
+  <%= link_to "  Tạo mới", new_admin_room_cost_path,
     class: "fa fa-plus btn btn-default" %>
 </div>
 <div id="table-floors">
@@ -8,7 +8,7 @@
     <thead>
       <tr class="info row">
         <th class="col-md-1"><%= t ".month" %></th>
-        <th class="col-md-2"><%= t ".name_floor" %></th>
+        <th class="col-md-2"><%= t ".name_room" %></th>
         <th class="col-md-2"><%= t ".amount_electric_consumption" %></th>
         <th class="col-md-2"><%= t ".real_consumption" %></th>
         <th class="col-md-2"><%= t ".electric_cost" %></th>
@@ -17,23 +17,23 @@
       </tr>
     </thead>
     <tbody>
-      <% @floor_costs.each do |fcost| %>
+      <% @room_costs.each do |fcost| %>
         <tr class="row">
           <td class="col-md-1"><%= fcost.month ? fcost.month.strftime("%m/%Y") : fcost.month %></td>
-          <td class="col-md-2"><%= fcost.floor.name %></td>
+          <td class="col-md-2"><%= fcost.room.name %></td>
           <th class="col-md-2"><%= fcost.amount_electric_consumption %></th>
           <th class="col-md-2"><%= fcost.get_current_consumption fcost.month %></th>
           <th class="col-md-2"><%= fcost.electric_cost ? number_to_currency(fcost.electric_cost.round, unit: "VND", delimiter: ".", separator: ",", precision: 0, format: "%n %u") : fcost.electric_cost.round %></th>
           <th class="col-md-2"><%= fcost.updated_at.strftime("%d/%m/%Y - %H:%M") %></th>
           <td class="col-md-1">
-            <%= link_to edit_admin_floor_cost_path(fcost),
+            <%= link_to edit_admin_room_cost_path(fcost),
               class: "btn btn-default button-1" do %>
-              <i class="fa fa-wrench"><%= t ".edit_floor_cost" %></i>
+              <i class="fa fa-wrench"><%= t ".edit_room_cost" %></i>
             <% end %>
           </td>
         </tr>
       <% end %>
-      <%= paginate @floor_costs %>
+      <%= paginate @room_costs %>
     </tbody>
   </table>
 </div>

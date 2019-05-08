@@ -1,6 +1,6 @@
-<h2 class="text-center"><%= t ".floors" %></h2>
+<h2 class="text-center"><%= t ".rooms" %></h2>
 <div class="pull-left btn-add-cost">
-  <%= link_to "  Tạo mới", new_admin_floor_path,
+  <%= link_to "  Tạo mới", new_admin_room_path,
     class: "fa fa-plus btn btn-default" %>
 </div>
 <div id="table-floors">
@@ -13,19 +13,19 @@
       </tr>
     </thead>
     <tbody>
-      <% @floors.each_with_index do |floor, index| %>
+      <% @rooms.each_with_index do |room, index| %>
         <tr class="row">
           <td class="col-md-2"><%= index + 1 %></td>
-          <td class="col-md-8"><%= floor.name %></td>
+          <td class="col-md-8"><%= room.name %></td>
           <td class="col-md-2">
-            <%= link_to edit_admin_floor_path(floor),
+            <%= link_to edit_admin_room_path(room),
               class: "btn btn-default button-1" do %>
-              <i class="fa fa-wrench"><%= t ".edit_floor" %></i>
+              <i class="fa fa-wrench"><%= t ".edit_room" %></i>
             <% end %>
           </td>
         </tr>
       <% end %>
-      <%= paginate @floors %>
+      <%= paginate @rooms %>
     </tbody>
   </table>
 </div>

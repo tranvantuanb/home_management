@@ -1,16 +1,16 @@
-class Admin::FloorsController < ApplicationController
+class Admin::RoomsController < ApplicationController
   load_and_authorize_resource
   layout "admin"
 
   def index
-    @floors = Floor.all.page params[:page]
+    @rooms = Room.all.page params[:page]
   end
 
   def create
-    if @floor.valid?
-      @floor.save
+    if @room.valid?
+      @room.save
       flash[:success] = t ".create_success"
-      redirect_to admin_floors_url
+      redirect_to admin_rooms_url
     else
       flash[:danger] = t ".fail"
       render :new
@@ -25,17 +25,17 @@ class Admin::FloorsController < ApplicationController
   end
 
   def update
-    if @floor.update_attributes floor_params
+    if @room.update_attributes room_params
       flash[:success] = t ".update_success"
 
-      redirect_to admin_floors_url
+      redirect_to admin_rooms_url
     else
       render :edit
     end
   end
 
   private
-  def floor_params
-    params.require(:floor).permit(:name)
+  def room_params
+    params.require(:room).permit(:name)
   end
 end

@@ -3,7 +3,7 @@ class Cost < ApplicationRecord
   ATTRIBUTE_PARAMS = [:month, :total_payment_electric, :total_payment_water, :amount_electric,
     :amount_water]
 
-  has_many :floor_costs
+  has_many :room_costs
 
   validate :check_duplicate_month
 

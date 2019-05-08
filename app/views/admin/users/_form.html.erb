@@ -35,8 +35,8 @@
       </div>
 
       <div class="form-group">
-        <%= f.collection_select :floor_id, Floor.all, :id, :name,
-          {:prompt => "Chọn ở tầng nào?", selected: @user.floor_id}, {class: "form-control"} %>
+        <%= f.collection_select :room_id, Room.all, :id, :name,
+          {:prompt => "Ở phòng nào?", selected: @user.room_id}, {class: "form-control"} %>
       </div>
 
       <div class="form-group">

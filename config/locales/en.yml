@@ -47,7 +47,7 @@ en:
   good_house: "Happy House"
   layouts:
     header:
-      home_management: "Home Management"
+      home_management: "11/93 VTV"
       caculate_cost: "Tính toán chi phí"
       help: "Help"
       about: "About"
@@ -58,12 +58,12 @@ en:
       author: "Trần Tuấn"
       the: "The"
       by: "by"
-      home_management: "Home management"
+      home_management: "Page quản lý nhà"
     admin:
       admin: "Admin"
       list_costs: "Quản lý chi phí"
-      list_floors: "Quản lý tầng"
-      list_floor_costs: "Quản lý chi phí theo tầng"
+      list_rooms: "Quản lý phòng"
+      list_room_costs: "Chi phí theo phòng"
       list_users: "Quản lý thành viên"
   static_pages:
     contact:
@@ -76,7 +76,7 @@ en:
       detail_phone: "+84 9733 22 413"
       detail_address: "25T2 - Hoang Dao Thuy Stress, Ha Noi City"
     home:
-      home: "Trang chủ"
+      home: "Chào mừng bạn đến ngôi nhà vui vẻ!"
     help:
       help: "Help"
     about:
@@ -112,33 +112,33 @@ en:
       index:
         electric: "Tiền điện"
         water: "Tiền nước"
-    floors:
+    rooms:
       form:
         save: "Lưu"
-        name_floor: "Tầng mấy?"
+        name_floor: "Phòng nào?"
       create:
         create_success: "Lưu thành công!"
       index:
-        edit_floor: " Chỉnh sửa"
-        floors: "Quản lý tầng"
+        edit_room: " Chỉnh sửa"
+        rooms: "Quản lý phòng"
         order: "STT"
-        name_floor: "Tên tầng"
+        name_floor: "Tên phòng"
       update:
         update_success: "Cập nhật thành công!"
       edit:
-        edit_floor: "Chỉnh sửa thông tin tầng"
-    floor_costs:
+        edit_room: "Chỉnh sửa thông tin phòng"
+    room_costs:
       new:
-        create_floor_cost: "Nhập số liệu theo tầng"
+        create_room_cost: "Nhập số liệu theo phòng"
       index:
-        floor_costs: "Chi phí theo tầng"
+        room_costs: "Chi phí theo phòng"
         order: "STT"
-        name_floor: "Tầng"
+        name_room: "Phòng"
         amount_electric_consumption: "Số điện công tơ"
         real_consumption: "Trong tháng"
         electric_cost: "Tiền điện"
         water_cost: "Tiền nước"
-        edit_floor_cost: " Chỉnh sửa"
+        edit_room_cost: " Chỉnh sửa"
         month: "Tháng"
         updated_time: "Cập nhật lúc"
       form:
@@ -151,7 +151,7 @@ en:
       update:
         update_success: "Lưu thành công"
       edit:
-        edit_floor: "Chỉnh sửa chi phí theo tầng"
+        edit_room: "Chỉnh sửa chi phí theo phòng"
     users:
       index:
         users: "Danh sách thành viên"
@@ -159,11 +159,12 @@ en:
         name: "Tên"
         email: "Mail tài khoản"
         phone_number: "Số điện thoại"
-        floor: "Đang ở tầng"
+        floor: "Đang ở phòng"
         edit_user: " Chỉnh sửa"
         e_cost: "Tiền điện"
         w_cost: "Tiền nước"
         month: "Tháng"
+        total: "Tổng tiền"
       edit:
         edit_user: "Chỉnh sửa account thành viên"
       form:
