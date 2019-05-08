@@ -25,6 +25,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
+    # binding.pry
     if @user.update_attributes user_params
       flash[:success] = t ".update_success"
 

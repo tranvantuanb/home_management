@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users
   namespace :admin do
     root "admins#index", as: :root
-    resources :costs, :floors, :floor_costs
+    resources :costs, :rooms, :room_costs
     resources :users do
       get "get_user_cost_info", on: :collection
     end

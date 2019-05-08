@@ -1,12 +1,12 @@
 class CostCaculateService
-  PRICE_1 = 1549
-  PRICE_2 = 1600
-  PRICE_3 = 1858
-  PRICE_4 = 2340
-  PRICE_5 = 2615
-  PRICE_6 = 2701
-  THREE_SOLD_1 = 50 / 3.0
-  THREE_SOLD_2 = 100 / 3.0
+  PRICE_1 = 1678
+  PRICE_2 = 1734
+  PRICE_3 = 2014
+  PRICE_4 = 2536
+  PRICE_5 = 2834
+  PRICE_6 = 2927
+  THREE_SOLD_1 = 50 / 6.0
+  THREE_SOLD_2 = 100 / 6.0
 
   def initialize
   end
@@ -32,21 +32,21 @@ class CostCaculateService
     payment
   end
 
-  def auto_create_user_cost floor_cost
-    total_floor_users = floor_cost.floor.users.size
-    electric_cost = floor_cost.electric_cost * 1.0 / total_floor_users
-    cost = floor_cost.cost
-
+  def auto_create_user_cost room_cost
+    room_users = room_cost.room.users
+    total_room_users = room_users.size
+    electric_cost = room_cost.electric_cost * 1.0 / total_room_users
+    cost = room_cost.cost
     if cost
-      water_cost = floor_cost.cost.total_payment_water * 1.0 / User.where("floor_id is not null").size
-      month = floor_cost.month
-      floor_cost.floor.users.each do |u|
-        user_cost = UserCost.find_by user_id: u.id, cost_id: floor_cost.cost.id
-        if user_cost
+      water_cost = cost.total_payment_water * 1.0 / User.where("room_id is not null").size
+      month = room_cost.month
+      room_users.each do |u|
+        user_cost = UserCost.find_by user_id: u.id, cost_id: room_cost.cost.id
+        if user_cost && user_cost.month.month === month.month
           user_cost_params = {electric_cost: electric_cost, water_cost: water_cost}
           user_cost.update_attributes user_cost_params
         else
-          user_cost_params = {user_id: u.id, cost_id: floor_cost.cost.id, electric_cost: electric_cost, water_cost: water_cost, month: month}
+          user_cost_params = {user_id: u.id, cost_id: room_cost.cost.id, electric_cost: electric_cost, water_cost: water_cost, month: month}
           UserCost.create user_cost_params
         end
       end
