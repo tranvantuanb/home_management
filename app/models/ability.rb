@@ -11,7 +11,7 @@ class Ability
       can :manage, User do |u|
         user.id == u.id
       end
-      can :read, [Cost, Floor, FloorCost, UserCost]
+      can :read, [Cost, Room, RoomCost, UserCost]
     end
   end
 end

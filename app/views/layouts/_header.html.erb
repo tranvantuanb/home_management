@@ -16,6 +16,9 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="navc"><%= link_to t(".caculate_cost"), admin_root_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to t(".profile"), user_path(current_user) %></li>
+        <% end %>
         <li class="navc"><%= link_to t(".help"), "/help" %></li>
         <li class="navc"><%= link_to t(".about"), "/about" %></li>
         <% if user_signed_in? %>
@@ -24,7 +27,6 @@
               <%= t(".account") %><b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to t(".profile"), user_path(current_user) %></li>
               <li>
                 <%= link_to t(".settings"), edit_user_registration_path(current_user) %>
               </li>

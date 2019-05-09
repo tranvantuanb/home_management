@@ -7,23 +7,25 @@
   <table class="table table-hover new-order table-bordered">
     <thead>
       <tr class="info row">
-        <th class="col-md-2"><%= t ".month" %></th>
+        <th class="col-md-1"><%= t ".month" %></th>
         <th class="col-md-2"><%= t ".amount_electric" %></th>
+        <th class="col-md-2"><%= t ".amount_room_electric" %></th>
         <th class="col-md-2"><%= t ".total_payment_electric" %></th>
         <th class="col-md-2"><%= t ".amount_water" %></th>
         <th class="col-md-2"><%= t ".total_payment_water" %></th>
-        <th class="col-md-2"></th>
+        <th class="col-md-1"></th>
       </tr>
     </thead>
     <tbody>
       <% @costs.each do |cost| %>
         <tr class="row">
-          <td class="col-md-2"><%= cost.month ? cost.month.strftime("%m/%Y") : cost.month %></td>
+          <td class="col-md-1"><%= cost.month ? cost.month.strftime("%m/%Y") : cost.month %></td>
           <td class="col-md-2"><%= cost.amount_electric %></td>
+          <td class="col-md-2"><%= cost.room_costs.sum(:amount_electric_consumption) %></td>
           <td class="col-md-2"><%= cost.total_payment_electric ? number_to_currency(cost.total_payment_electric, unit: "VND", delimiter: ".", separator: ",", format: "%n %u") : cost.total_payment_electric %></td>
           <td class="col-md-2"><%= cost.amount_water %></td>
           <td class="col-md-2"><%= cost.total_payment_water ? number_to_currency(cost.total_payment_water, unit: "VND", delimiter: ".", separator: ",", format: "%n %u") : cost.total_payment_water %></td>
-          <td class="col-md-2">
+          <td class="col-md-1">
             <%= link_to edit_admin_cost_path(cost),
               class: "btn btn-default button-1" do %>
               <i class="fa fa-wrench"> Chỉnh sửa </i>
