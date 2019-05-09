@@ -17,11 +17,11 @@ class CostCaculateService
     elsif current_consumption <= 2 * THREE_SOLD_1
       payment = THREE_SOLD_1 * PRICE_1 + (current_consumption - THREE_SOLD_1) * PRICE_2
     elsif current_consumption <= 2 * THREE_SOLD_1 + THREE_SOLD_2
-      payment = THREE_SOLD_1 * PRICE_1 + THREE_SOLD_1 * PRICE_2 +
-        (current_consumption - (2 * THREE_SOLD_1 + THREE_SOLD_2)) * PRICE_3
+      payment = THREE_SOLD_1 * (PRICE_1 + PRICE_2) +
+        (current_consumption - (2 * THREE_SOLD_1)) * PRICE_3
     elsif current_consumption <= 2 * THREE_SOLD_1 + 2 * THREE_SOLD_2
-      payment = THREE_SOLD_1 * PRICE_1 + THREE_SOLD_1 * PRICE_2 +
-        THREE_SOLD_2 * PRICE_3 + (current_consumption - (2 * THREE_SOLD_1 + 2 * THREE_SOLD_2)) * PRICE_4
+      payment = THREE_SOLD_1 * (PRICE_1 + PRICE_2) +
+        THREE_SOLD_2 * PRICE_3 + (current_consumption - (2 * THREE_SOLD_1 + THREE_SOLD_2)) * PRICE_4
     elsif current_consumption <= 2 * THREE_SOLD_1 + 3 * THREE_SOLD_2
       payment = THREE_SOLD_1 * PRICE_1 + THREE_SOLD_1 * PRICE_2 +
         THREE_SOLD_2 * PRICE_3 + THREE_SOLD_2 * PRICE_4 + (current_consumption - (2 * THREE_SOLD_1 + 2 * THREE_SOLD_2)) * PRICE_5

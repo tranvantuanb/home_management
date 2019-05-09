@@ -13,8 +13,8 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span class="sr-only"></span>
             <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            # <span class="icon-bar"></span>
+            # <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/admin">
             <span><%= t ".admin" %><%= t(".page") %></span>
@@ -27,7 +27,7 @@
         <div class="sidebar col-md-2">
           <ul id="nav">
             <li>
-              <a class="selected" href="/admin">
+              <a href="/admin">
                 <i class="fa fa-dashboard"></i><%= t ".dashboard" %>
               </a>
             </li>
@@ -55,6 +55,7 @@
                 <%= t ".list_users" %>
               <% end %>
             </li>
+            <li><%= link_to t(".home_page"), root_path %></li>
           </ul>
         </div>
         <div class="content col-md-10 col-md-offset-2">

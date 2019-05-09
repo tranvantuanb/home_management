@@ -48,12 +48,15 @@ en:
   layouts:
     header:
       home_management: "11/93 VTV"
-      caculate_cost: "Tính toán chi phí"
+      caculate_cost: "Xem chi phí cả nhà"
       help: "Help"
       about: "About"
       account: "Tài khoản"
       login: "Đăng nhập"
       signup: "Đăng ký"
+      profile: "Xem chi phí cá nhân"
+      settings: "Cài đặt"
+      log_out: "Đăng xuất"
     footer:
       author: "Trần Tuấn"
       the: "The"
@@ -65,6 +68,9 @@ en:
       list_rooms: "Quản lý phòng"
       list_room_costs: "Chi phí theo phòng"
       list_users: "Quản lý thành viên"
+      dashboard: "Dashboard"
+      page: "Page"
+      home_page: "Trang chủ"
   static_pages:
     contact:
       mail_us: "Mail us"
@@ -76,7 +82,7 @@ en:
       detail_phone: "+84 9733 22 413"
       detail_address: "25T2 - Hoang Dao Thuy Stress, Ha Noi City"
     home:
-      home: "Chào mừng bạn đến ngôi nhà vui vẻ!"
+      home: "Chào mừng bạn đến với ngôi nhà vui vẻ!"
     help:
       help: "Help"
     about:
@@ -92,6 +98,7 @@ en:
         cost: "Chi phí cả nhà"
         month: "Thời gian"
         total_payment_electric: "Tổng tiền điện"
+        amount_room_electric: "Tổng số điện các phòng"
         total_payment_water: "Tổng tiền nước"
         amount_electric: "Tổng số điện tiêu thụ"
         amount_water: "Tổng số nước tiêu thụ"
@@ -190,6 +197,7 @@ en:
       e_cost: "Tiền điện"
       w_cost: "Tiền nước"
       index: "STT"
+      total: "Tổng thanh toán"
   cost_statistics: "Thống kê chi phí điện nước "
   vertical: "vertical"
   right: "right"
