@@ -25,8 +25,12 @@ class Admin::UsersController < ApplicationController
   end
 
   def update
-    # binding.pry
-    if @user.update_attributes user_params
+    update_params = user_params
+    if params.require(:user)[:password].blank? && params.require(:user)[:password_confirmation].blank?
+      update_params.except!(:password, :password_confirmation)
+    end
+    
+    if @user.update_attributes update_params
       flash[:success] = t ".update_success"
 
       redirect_to admin_users_url
